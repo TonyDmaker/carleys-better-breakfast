@@ -1,0 +1,204 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Carley’s Better Breakfast — Mock Site</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="Carley's Better Breakfast logo">
+        <h1>Carley’s Better Breakfast</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#findus">Find Us</a></li>
+          <li><a href="#social">Social</a></li>
+          <li><a href="#truck">Truck</a></li>
+
+        </ul>
+      </nav>
+      <a class="cta" href="javascript:openModal('orderModal')">Order Online</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <h2>Scratch-made breakfast. In & out in 60 seconds.</h2>
+        <p>Modular sandwiches on biscuit, pancake, waffle, or tortilla — farm-egg, bacon/sausage/ham, American or cheddar. Add plate sides, roll.</p>
+        <div class="buttons">
+          <a class="btn pink" href="#menu">View Menu</a>
+          <a class="btn" href="javascript:openModal('appModal')">Get the App (free food!)</a>
+        </div>
+        <div style="margin-top:10px"><small class="muted">@CarleysBetterBreakfast</small></div>
+      </div>
+      <div>
+        <div class="card"><img src="assets/img/waffle.png" alt="Waffle Sandwich"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="container">
+      <h3>Build Your Breakfast</h3>
+      <div class="builder">
+        <div class="pane">
+          <fieldset>
+            <legend>Base</legend>
+            <div class="option-row">
+              <label><input type="radio" name="base" value="Biscuit" checked> Biscuit</label>
+              <label><input type="radio" name="base" value="Pancake"> Pancake</label>
+              <label><input type="radio" name="base" value="Waffle"> Waffle</label>
+              <label><input type="radio" name="base" value="Tortilla wrap"> Tortilla Wrap</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Protein</legend>
+            <div class="option-row">
+              <label><input type="radio" name="protein" value="Bacon" checked> Bacon</label>
+              <label><input type="radio" name="protein" value="Sausage patty"> Sausage</label>
+              <label><input type="radio" name="protein" value="Country Ham"> Country Ham</label>
+              <label><input type="radio" name="protein" value="None"> None</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Egg</legend>
+            <div class="option-row">
+              <label><input type="radio" name="egg" value="Fried" checked> Fried</label>
+              <label><input type="radio" name="egg" value="Scrambled"> Scrambled</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Cheese</legend>
+            <div class="option-row">
+              <label><input type="radio" name="cheese" value="American" checked> American</label>
+              <label><input type="radio" name="cheese" value="Cheddar"> Cheddar</label>
+              <label><input type="radio" name="cheese" value="None"> None</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Plate Option</legend>
+            <div class="option-row">
+              <label><input type="radio" name="plate" value="None" checked> None</label>
+              <label><input type="radio" name="plate" value="+2 waffles"> +2 waffles</label>
+              <label><input type="radio" name="plate" value="+2 pancakes"> +2 pancakes</label>
+              <label><input type="radio" name="plate" value="+1 biscuit"> +1 biscuit</label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="pane">
+          <h4>Your Build</h4>
+          <div id="build-summary" class="summary"></div>
+          <div id="build-price" class="summary"></div>
+          <div style="margin-top:12px">
+            <a class="btn pink" href="javascript:openModal('orderModal')">Add to Order</a>
+          </div>
+          <div style="margin-top:20px" class="card">
+            <img src="assets/img/biscuit.png" alt="Biscuit Roll">
+            <div class="pad"><b>Signature:</b> Biscuit Roll w/ Gravy — hot, handheld, gravy inside.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <h3>Our Story</h3>
+      <p>Carley proposed the idea at age five — a family-run breakfast truck serving scratch-made, farm-forward food at drive-thru speed. We make biscuits, pancakes, waffles, and tortillas from scratch and source eggs locally when possible.</p>
+      <div id="reviews-box"></div>
+    </div>
+  </section>
+
+  <section class="section" id="social">
+    <div class="container">
+      <h3>Social</h3>
+      <div class="card-grid" id="social-feed"></div>
+      <div style="margin-top:14px" class="buttons">
+        <a class="btn" href="#" onclick="alert('IG mock link');return false;">Instagram</a>
+        <a class="btn" href="#" onclick="alert('Facebook mock link');return false;">Facebook</a>
+        <a class="btn" href="#" onclick="alert('TikTok mock link');return false;">TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="findus">
+    <div class="container">
+      <h3>Find Us</h3>
+      <div class="card" style="padding:0">
+        <div style="height:320px;background:linear-gradient(135deg,var(--lightGray),var(--lightPink));display:flex;align-items:center;justify-content:center">
+          <div class="qr">MAP</div>
+        </div>
+        <div class="pad">
+          <b>Location:</b> Highway 82 roadside (pull-off)<br>
+          <b>Hours:</b> Mon–Fri 5:30a–11:00a • Sat 6:00a–12:00p • Sun 7:00a–12:00p
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="section" id="truck">
+  <div class="container">
+    <h3>Our Truck</h3>
+    <div class="card">
+      <img src="assets/img/truck_wrap.png" alt="Carley’s Better Breakfast food truck wrap" style="width:100%;height:auto;display:block">
+      <div class="pad">
+        Wrapped in our light pink + light gray diagonal with the blonde Carley mascot and Biscuit Roll hero. Spot us on Highway 82!
+      </div>
+    </div>
+  </div>
+ </section>
+
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <b>Carley’s Better Breakfast</b><br>
+        Scratch-made breakfast. In & out in 60 seconds.<br>
+        <small class="muted">This is a mock prototype for demonstration.</small>
+      </div>
+      <div>
+        <div class="qr">QR</div>
+        <small>Menu & Ordering</small>
+      </div>
+      <div>
+        <a class="btn" href="javascript:openModal('appModal')">Download App</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal" onclick="closeModal('orderModal')">
+    <div class="box" onclick="event.stopPropagation()">
+      <h3>Order Online (Mock)</h3>
+      <p>Online ordering launches soon! For now, swing by our Highway 82 pull-off or follow our socials for updates.</p>
+      <div class="buttons">
+        <a class="btn pink" href="#" onclick="alert('Mock checkout');return false;">Checkout</a>
+        <a class="btn" href="javascript:closeModal('orderModal')">Close</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- App Modal -->
+  <div id="appModal" class="modal" onclick="closeModal('appModal')">
+    <div class="box" onclick="event.stopPropagation()">
+      <h3>Get the App — Free Food</h3>
+      <p>Download our mobile app and get a <b>free coffee</b> with your first sandwich.</p>
+      <div class="buttons">
+        <a class="btn" href="#" onclick="alert('Mock App Store link');return false;">App Store</a>
+        <a class="btn" href="#" onclick="alert('Mock Google Play link');return false;">Google Play</a>
+        <a class="btn" href="javascript:closeModal('appModal')">Close</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
