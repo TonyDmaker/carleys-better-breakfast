@@ -5,6 +5,12 @@
   <title>Carley’s Better Breakfast — Mock Site</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <link rel="stylesheet" href="assets/css/style.css"/>
+
+          <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+
 </head>
 <body>
   <header>
@@ -131,17 +137,18 @@
   <section class="section" id="findus">
     <div class="container">
       <h3>Find Us</h3>
-      <div class="card" style="padding:0">
-        <div style="height:320px;background:linear-gradient(135deg,var(--lightGray),var(--lightPink));display:flex;align-items:center;justify-content:center">
-          <div class="qr">MAP</div>
+      <p>Parked along SR-82 (mock location). Hours vary—watch social for pop-ups.</p>
+
+      <div id="map" aria-label="Map showing Carley’s Better Breakfast location"></div>
+
+      <div class="buttons" style="margin-top:12px">
+         <a id="gmaps-link" class="btn" target="_blank" rel="noopener">Open in Google Maps</a>
+         <a id="applemaps-link" class="btn" target="_blank" rel="noopener">Open in Apple Maps</a>
+         <a id="center-me" class="btn" href="#">Center on Me</a>
         </div>
-        <div class="pad">
-          <b>Location:</b> State Road 82 roadside (pull-off)<br>
-          <b>Hours:</b> Mon–Fri 5:30a–11:00a • Sat 6:00a–12:00p • Sun 7:00a–12:00p
-        </div>
-      </div>
-    </div>
-  </section>
+       </div>
+   </section>
+
 
    <section class="section" id="truck">
   <div class="container">
@@ -198,6 +205,19 @@
     </div>
   </div>
 
+  <script src="assets/js/app.js"></script>
+
+              <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+       <!-- Map bootstrap (keep separate so we don't touch app.js) -->
+   <script src="assets/js/map.js?v=1"></script>
+
+</body>
+</html>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
