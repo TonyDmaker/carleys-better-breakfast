@@ -53,3 +53,8 @@ function loadSocial(){
   feed.innerHTML = posts.map(p=>`<div class="card"><img src="${p.img}"><div class="pad">${p.text}</div></div>`).join('');
 }
 document.addEventListener('DOMContentLoaded', loadSocial);
+
+  feed.innerHTML = posts.map(p=>`<div class="card"><img src="${p.img}"><div class="pad">${p.text}</div></div>`).join('');
+}
+document.addEventListener('DOMContentLoaded', loadSocial);
+
