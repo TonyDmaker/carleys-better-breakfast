@@ -1,37 +1,41 @@
-<script>
+<script src="assets/js/social-modal.js?v=3"></script>
 (() => {
-  // Map button text -> image to show (adjust paths if your filenames differ)
   const IMAGE_MAP = {
     'Instagram': 'assets/img/social_profile_instagram.png',
     'Facebook' : 'assets/img/social_profile_facebook.png',
     'TikTok'   : 'assets/img/social_profile_tiktok.png'
   };
 
-  // Attach after DOM is ready
   document.addEventListener('DOMContentLoaded', () => {
-    // Find the three social buttons by their visible labels
-    const buttons = Array.from(document.querySelectorAll('.btn'))
-      .filter(b => ['Instagram','Facebook','TikTok'].includes(b.textContent.trim()));
+    const labels = Object.keys(IMAGE_MAP);
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
+    // 1) Find the three social buttons
+    const buttons = Array.from(document.querySelectorAll('.btn'))
+      .filter(b => labels.includes(b.textContent.trim()));
+
+    buttons.forEach((btn) => {
+      const label = btn.textContent.trim();
+      const src   = IMAGE_MAP[label];
+
+      // 2) Remove any existing event listeners by cloning
+      const clone = btn.cloneNode(true);
+      btn.replaceWith(clone);
+
+      // 3) Add our modal handler
+      clone.addEventListener('click', (e) => {
         e.preventDefault();
-        const label = btn.textContent.trim();
-        const src = IMAGE_MAP[label];
+        e.stopPropagation(); // extra safety
         if (src) openImageModal(src, `${label} — Carley’s Better Breakfast`);
       });
     });
   });
 
-  // Simple reusable modal
+  // 4) Simple image modal
   function openImageModal(src, title) {
-    if (!src) return;
+    // remove old modal if present
+    const old = document.getElementById('cbb-img-modal');
+    if (old) old.remove();
 
-    // Remove any existing modal
-    const existing = document.getElementById('cbb-img-modal');
-    if (existing) existing.remove();
-
-    // Build modal
     const wrap = document.createElement('div');
     wrap.id = 'cbb-img-modal';
     wrap.innerHTML = `
@@ -43,9 +47,10 @@
     `;
     document.body.appendChild(wrap);
 
-    // Close handlers
-    wrap.querySelector('.cbb-im-bg').onclick = () => wrap.remove();
+    wrap.querySelector('.cbb-im-bg').onclick   = () => wrap.remove();
     wrap.querySelector('.cbb-im-close').onclick = () => wrap.remove();
   }
 })();
+
 </script>
+
