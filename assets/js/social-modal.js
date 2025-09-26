@@ -1,4 +1,4 @@
-<script src="assets/js/social-modal.js?v=3"></script>
+
 (() => {
   const IMAGE_MAP = {
     'Instagram': 'assets/img/social_profile_instagram.png',
@@ -53,4 +53,5 @@
 })();
 
 </script>
+
 
