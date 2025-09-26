@@ -1,4 +1,3 @@
-
 (() => {
   const IMAGE_MAP = {
     'Instagram': 'assets/img/social_profile_instagram.png',
@@ -53,5 +52,6 @@
 })();
 
 </script>
+
 
 
