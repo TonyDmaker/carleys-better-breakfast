@@ -8,7 +8,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const labels = Object.keys(IMAGE_MAP);
 
-    // 1) Find the three social buttons
+    // Find the three social buttons by visible text
     const buttons = Array.from(document.querySelectorAll('.btn'))
       .filter(b => labels.includes(b.textContent.trim()));
 
@@ -16,22 +16,24 @@
       const label = btn.textContent.trim();
       const src   = IMAGE_MAP[label];
 
-      // 2) Remove any existing event listeners by cloning
+      // 1) Strip any inline onclick that fires alert(...)
+      btn.removeAttribute('onclick');
+
+      // 2) Replace node to drop any previously bound listeners
       const clone = btn.cloneNode(true);
       btn.replaceWith(clone);
 
-      // 3) Add our modal handler
+      // 3) Add a capturing listener to stop anything else before it fires
       clone.addEventListener('click', (e) => {
         e.preventDefault();
-        e.stopPropagation(); // extra safety
+        e.stopPropagation();
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation();
         if (src) openImageModal(src, `${label} — Carley’s Better Breakfast`);
-      });
+      }, { capture: true });
     });
   });
 
-  // 4) Simple image modal
   function openImageModal(src, title) {
-    // remove old modal if present
     const old = document.getElementById('cbb-img-modal');
     if (old) old.remove();
 
@@ -45,11 +47,11 @@
       </div>
     `;
     document.body.appendChild(wrap);
-
     wrap.querySelector('.cbb-im-bg').onclick   = () => wrap.remove();
     wrap.querySelector('.cbb-im-close').onclick = () => wrap.remove();
   }
 })();
+
 
 
 
