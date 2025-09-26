@@ -66,6 +66,18 @@ small.muted{color:#666}
     margin-top: 10px;
 }
 
+/* Ensure the Leaflet map has a real height on all screens */
+#map { height: 320px; }
+
+/* Slightly shorter on small phones */
+@media (max-width: 480px) {
+  #map { height: 260px; }
+}
+
+/* Allow touch panning/zooming smoothly */
+.leaflet-container {
+  touch-action: pan-x pan-y;
+}
 
 
 /* Social profile modal */
@@ -83,5 +95,6 @@ small.muted{color:#666}
 }
 
   
+
 
 
