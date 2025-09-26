@@ -63,6 +63,23 @@ small.muted{color:#666}
   border-radius: 14px;
   border: 1px solid var(--lightGray);
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+/* Social profile modal */
+#cbb-img-modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 9999; }
+#cbb-img-modal .cbb-im-bg { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+#cbb-img-modal .cbb-im-card {
+  position: relative; background: #fff; border-radius: 12px;
+  max-width: min(1100px, 92vw); max-height: 90vh; overflow: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.35);
+}
+#cbb-img-modal img { display: block; max-width: 100%; height: auto; border-radius: 10px; }
+#cbb-img-modal .cbb-im-close {
+  position: absolute; top: 8px; right: 10px; border: 0; background: transparent;
+  font-size: 20px; cursor: pointer; line-height: 1;
+}
+
+  
   margin-top: 10px;
 }
+
 
